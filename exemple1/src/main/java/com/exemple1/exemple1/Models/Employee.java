@@ -7,4 +7,5 @@ import jakarta.persistence.Table;
 @Table(name = "employess")
 public class Employee {
     private Long employeeId;
+    private String employeeName;
 }
