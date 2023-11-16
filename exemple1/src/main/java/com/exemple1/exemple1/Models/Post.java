@@ -8,17 +8,18 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
-    private String namePost;
-    private Double salaryPost;
+    private String postName;
+    private Double postSalary;
 
     public  Post(){
 
     }
-    public Post(Long postId, String namePost, Double salaryPost) {
+    public Post(Long postId, String postName, Double postSalary) {
         this.postId = postId;
-        this.namePost = namePost;
-        this.salaryPost = salaryPost;
+        this.postName = postName;
+        this.postSalary = postSalary;
     }
+
 
     public Long getPostId() {
         return postId;
@@ -28,19 +29,19 @@ public class Post {
         this.postId = postId;
     }
 
-    public String getNamePost() {
-        return namePost;
+    public String getPostName() {
+        return postName;
     }
 
-    public void setNamePost(String namePost) {
-        this.namePost = namePost;
+    public void setPostName(String postName) {
+        this.postName = postName;
     }
 
-    public Double getSalaryPost() {
-        return salaryPost;
+    public Double getPostSalary() {
+        return postSalary;
     }
 
-    public void setSalaryPost(Double salaryPost) {
-        this.salaryPost = salaryPost;
+    public void setPostSalary(Double postSalary) {
+        this.postSalary = postSalary;
     }
 }
