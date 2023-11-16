@@ -9,4 +9,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeId;
     private String employeeName;
+
+    @OneToOne
+    @JoinColumn(name = "post_id",referencedColumnName = "postId")
+    private Post post;
 }
