@@ -16,8 +16,7 @@ public class PostController {
     @GetMapping("/")
     public ResponseEntity<?> classAllPosts() {
         try {
-            var request = actionPostService.postAll();
-            return new ResponseEntity<>(request, HttpStatus.OK);
+            return new ResponseEntity<>(actionPostService.postAll().getBody(), HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
