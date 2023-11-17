@@ -4,7 +4,9 @@ import com.exemple1.exemple1.Models.Post;
 import com.exemple1.exemple1.Repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PostService {
     @Autowired
     private PostRepository actionPostRepository;
