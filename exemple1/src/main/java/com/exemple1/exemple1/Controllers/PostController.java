@@ -28,8 +28,8 @@ public class PostController {
         try{
             ResponseEntity<?> clientFromService = actionPostService.ResgisterService(postFromFront);
             return new ResponseEntity<>(clientFromService.getBody(),HttpStatus.CREATED);
-        }catch (){
-
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }
