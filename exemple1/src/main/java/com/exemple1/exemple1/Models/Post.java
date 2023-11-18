@@ -11,7 +11,10 @@ public class Post {
     private String postName;
     private Double postSalary;
 
-    public  Post(){
+    @OneToOne(mappedBy = "post")
+    private Employee employee;
+
+        public  Post(){
 
     }
     public Post(Long postId, String postName, Double postSalary) {
@@ -43,5 +46,13 @@ public class Post {
 
     public void setPostSalary(Double postSalary) {
         this.postSalary = postSalary;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }
