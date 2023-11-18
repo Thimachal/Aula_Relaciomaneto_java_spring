@@ -15,7 +15,7 @@ public class PostService {
         return ResponseEntity.ok(actionPostRepository.findAll());
     }
 
-    public ResponseEntity<?> ResgisterService(Post postFromFront) {
+    public ResponseEntity<?> resgisterService(Post postFromFront) {
         Post resquestService = actionPostRepository.save(postFromFront);
         return ResponseEntity.ok(resquestService);
     }
