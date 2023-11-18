@@ -17,7 +17,7 @@ public class EmployeeController {
     @GetMapping("/")
     public ResponseEntity<?> allEmployees() {
         try {
-            return new ResponseEntity<>(actionEmployeeService.emplyeeAll.getB)
+            return new ResponseEntity<>(actionEmployeeService.employeeAll().getB);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
