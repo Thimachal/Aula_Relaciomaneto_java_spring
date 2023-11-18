@@ -1,5 +1,6 @@
 package com.exemple1.exemple1.Services;
 
+import com.exemple1.exemple1.Models.Employee;
 import com.exemple1.exemple1.Repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,4 +14,8 @@ public class EmployeeService {
         return ResponseEntity.ok(actionEmployeeRepository.findAll());
     }
 
+    public ResponseEntity<?> registerService(Employee employeeFromFront) {
+        Employee requestService = actionEmployeeRepository.save(employeeFromFront);
+        return ResponseEntity.ok(requestService);
+    }
 }
