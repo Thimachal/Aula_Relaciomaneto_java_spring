@@ -25,7 +25,7 @@ public class PostController {
     @PostMapping("/")
     public ResponseEntity<?> register(@RequestBody Post postFromFront){
         try{
-            ResponseEntity<?> clientFromService = actionPostService.ResgisterService(postFromFront);
+            ResponseEntity<?> clientFromService = actionPostService.resgisterService(postFromFront);
             return new ResponseEntity<>(clientFromService.getBody(),HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
