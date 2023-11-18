@@ -14,7 +14,7 @@ public class PostController {
     private PostService actionPostService;
 
     @GetMapping("/")
-    public ResponseEntity<?> classAllPosts() {
+    public ResponseEntity<?> allPosts() {
         try {
             return new ResponseEntity<>(actionPostService.postAll().getBody(), HttpStatus.OK);
         }catch (Exception e){
