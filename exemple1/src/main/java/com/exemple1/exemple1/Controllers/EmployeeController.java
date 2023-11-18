@@ -25,6 +25,12 @@ public class EmployeeController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?>
+    public ResponseEntity<?> registerEmployees(){
+        try{
+
+        }catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 
 }
