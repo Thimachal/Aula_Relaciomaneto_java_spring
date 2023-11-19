@@ -1,5 +1,6 @@
 package com.exemple1.exemple1.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,7 @@ public class Post {
     private Double postSalary;
 
     @OneToOne(mappedBy = "post")
+    @JsonBackReference
     private Employee employee;
 
         public  Post(){
