@@ -21,7 +21,6 @@ public class EmployeeController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-
     @PostMapping("/")
     public ResponseEntity<?> registerEmployees(@RequestBody Employee employeeFromFront){
         try{
