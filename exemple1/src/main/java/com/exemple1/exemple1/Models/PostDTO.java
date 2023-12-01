@@ -8,7 +8,20 @@ public class PostDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long postId;
-    private String postNameDTO;
-    private Double postSalaryDTO;
+    private Long postIdDTO;
+
+    public PostDTO() {
+    }
+
+    public PostDTO(Long postIdDTO) {
+        this.postIdDTO = postIdDTO;
+    }
+
+    public Long getPostIdDTO() {
+        return postIdDTO;
+    }
+
+    public void setPostIdDTO(Long postIdDTO) {
+        this.postIdDTO = postIdDTO;
+    }
 }
