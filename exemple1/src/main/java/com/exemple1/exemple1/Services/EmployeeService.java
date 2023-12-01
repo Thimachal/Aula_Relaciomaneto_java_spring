@@ -12,18 +12,22 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository actionEmployeeRepository;
-    public ResponseEntity<?> employeeAll(){
-        return ResponseEntity.ok(actionEmployeeRepository.findAll());
-    }
 
     public ResponseEntity<?> registerService(EmployeeDTO employeeFromFront) {
         Employee employee = new Employee();
 
         employee.setEmployeeId(employeeFromFront.getEmployeeIDDTO());
         employee.setEmployeeName(employeeFromFront.getEmployeeNameDTO());
-        employee.setPost(employeeFromFront.getPostDTO());
+
 
         actionEmployeeRepository.save(employee);
         return ResponseEntity.ok(employee);
     }
+
+
+    public ResponseEntity<?> employeeAll(){
+        return ResponseEntity.ok(actionEmployeeRepository.findAll());
+    }
+
+
 }
