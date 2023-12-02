@@ -15,36 +15,17 @@ public class EmployeeService {
 
     public ResponseEntity<?> registerService(EmployeeDTO employeeFromFront) {
         Employee employee = new Employee();
+        Post post = new Post();
 
         employee.setEmployeeId(employeeFromFront.getEmployeeIDDTO());
         employee.setEmployeeName(employeeFromFront.getEmployeeNameDTO());
-
-        Post post = new Post();
-
         post.setPostId(employeeFromFront.getPostIdDTO());
 
-
-        //objeto generico que faz um D PARA
-        //aula reflection
-        //classe builder
-        //record mapper
+        actionEmployeeRepository.save(employee);
 
 
-        actionEmployeeRepository.save(employee, post);
-
-
-        return ResponseEntity.ok(employee, post);
+        return ResponseEntity.ok(employee);
     }
-
-
-
-
-
-
-
-
-
-
 
     public ResponseEntity<?> employeeAll(){
         return ResponseEntity.ok(actionEmployeeRepository.findAll());
@@ -52,3 +33,8 @@ public class EmployeeService {
 
 
 }
+
+//objeto generico que faz um D PARA
+//aula reflection
+//classe builder
+//record mapper
