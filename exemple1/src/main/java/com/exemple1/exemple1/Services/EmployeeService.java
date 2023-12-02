@@ -21,7 +21,9 @@ public class EmployeeService {
 
         Post post = new Post();
 
-        post.setPostId();
+        post.setPostId(employeeFromFront.getPostIdDTO());
+
+
         //objeto generico que faz um D PARA
         //aula reflection
         //classe builder
@@ -29,6 +31,7 @@ public class EmployeeService {
 
 
         actionEmployeeRepository.save(employee, post);
+
 
         return ResponseEntity.ok(employee, post);
     }
