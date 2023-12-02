@@ -13,6 +13,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository actionEmployeeRepository;
 
+
     public ResponseEntity<?> registerService(EmployeeDTO employeeFromFront) {
         Employee employee = new Employee();
         Post post = new Post();
@@ -24,7 +25,7 @@ public class EmployeeService {
         actionEmployeeRepository.save(employee);
 
 
-        return ResponseEntity.ok(employee);
+        return ResponseEntity.ok(employee,post);
     }
 
     public ResponseEntity<?> employeeAll(){
