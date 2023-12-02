@@ -8,14 +8,14 @@ public class EmployeeDTO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long employeeIDDTO;
     private String employeeNameDTO;
-    private PostDTO postDTO;
+    private Long postDTO; //postId
 
     public EmployeeDTO() {
     }
-    public EmployeeDTO(Employee obj, PostDTO obj2) {
+    public EmployeeDTO(Employee obj) {
         this.employeeIDDTO = obj.getEmployeeId();
         this.employeeNameDTO = obj.getEmployeeName();
-        this.postDTO = obj2;
+        //this. postId = obj.postId;
     }
 
 
@@ -35,6 +35,5 @@ public class EmployeeDTO {
     public void setEmployeeNameDTO(String employeeNameDTO) {
         this.employeeNameDTO = employeeNameDTO;
     }
-
 
 }
