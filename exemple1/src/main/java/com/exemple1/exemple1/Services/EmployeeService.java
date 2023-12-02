@@ -19,10 +19,28 @@ public class EmployeeService {
         employee.setEmployeeId(employeeFromFront.getEmployeeIDDTO());
         employee.setEmployeeName(employeeFromFront.getEmployeeNameDTO());
 
+        Post post = new Post();
 
-        actionEmployeeRepository.save(employee);
-        return ResponseEntity.ok(employee);
+        post.setPostId();
+        //objeto generico que faz um D PARA
+        //aula reflection
+        //classe builder
+        //record mapper
+
+
+        actionEmployeeRepository.save(employee, post);
+
+        return ResponseEntity.ok(employee, post);
     }
+
+
+
+
+
+
+
+
+
 
 
     public ResponseEntity<?> employeeAll(){
