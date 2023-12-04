@@ -1,11 +1,12 @@
 package com.exemple2.exemple2.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "postagens")
 public class Postage {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id;
     private String title;
 
