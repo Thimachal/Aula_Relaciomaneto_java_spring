@@ -2,6 +2,8 @@ package com.exemple2.exemple2.Models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "postagens")
 public class Postage {
@@ -11,6 +13,10 @@ public class Postage {
     private String title;
 
     private String text;
+
+    @OneToMany
+    @JoinColumn(name = "id_postagem")
+    private List<Comments> comments;
 
     public Postage() {
     }
