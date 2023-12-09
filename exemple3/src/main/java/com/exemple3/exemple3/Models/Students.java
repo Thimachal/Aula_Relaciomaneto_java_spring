@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "alunos")
+@Table(name = "students")
 public class Students {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,5 +14,8 @@ public class Students {
     private String studentname;
 
     @ManyToMany
+    @JoinTable(name = "tabela_auxiliar",
+               joinColumns = {@JoinColumn(name = "student_Id", referencedColumnName = "studentId" )}
+    )
     private List<Courses> coursesList = new ArrayList<>();
 }
