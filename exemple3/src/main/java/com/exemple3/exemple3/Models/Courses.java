@@ -14,4 +14,37 @@ public class Courses {
     private String courseName;
     @ManyToMany(mappedBy = "coursesList")//o mesmo nome da lista na entidade Students
     private List<Students> studentsList = new ArrayList<>();
+
+    public Courses() {
+    }
+
+    public Courses(Long courseId, String courseName, List<Students> studentsList) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.studentsList = studentsList;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public List<Students> getStudentsList() {
+        return studentsList;
+    }
+
+    public void setStudentsList(List<Students> studentsList) {
+        this.studentsList = studentsList;
+    }
 }
