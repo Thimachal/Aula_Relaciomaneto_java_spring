@@ -14,7 +14,7 @@ public class Students {
     private String studentname;
 
     @ManyToMany
-    @JoinTable(name = "tabela_auxiliar",
+    @JoinTable(name = "students_x_courses",
                joinColumns = {@JoinColumn(name = "student_Id", referencedColumnName = "studentId")},
             inverseJoinColumns = {@JoinColumn(name = "course_Id", referencedColumnName = "courseId")}
     )
