@@ -12,6 +12,6 @@ public class Courses {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long courseId;
     private String courseName;
-    @ManyToMany
+    @ManyToMany(mappedBy = "coursesList")//o mesmo nome da lista na entidade Students
     private List<Students> studentsList = new ArrayList<>();
 }
