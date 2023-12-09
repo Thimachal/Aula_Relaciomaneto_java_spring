@@ -19,4 +19,37 @@ public class Students {
             inverseJoinColumns = {@JoinColumn(name = "course_Id", referencedColumnName = "courseId")}
     )
     private List<Courses> coursesList = new ArrayList<>();
+
+    public Students() {
+    }
+
+    public Students(Long studentId, String studentname, List<Courses> coursesList) {
+        this.studentId = studentId;
+        this.studentname = studentname;
+        this.coursesList = coursesList;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getStudentname() {
+        return studentname;
+    }
+
+    public void setStudentname(String studentname) {
+        this.studentname = studentname;
+    }
+
+    public List<Courses> getCoursesList() {
+        return coursesList;
+    }
+
+    public void setCoursesList(List<Courses> coursesList) {
+        this.coursesList = coursesList;
+    }
 }
