@@ -15,7 +15,8 @@ public class Students {
 
     @ManyToMany
     @JoinTable(name = "tabela_auxiliar",
-               joinColumns = {@JoinColumn(name = "student_Id", referencedColumnName = "studentId" )}
+               joinColumns = {@JoinColumn(name = "student_Id", referencedColumnName = "studentId")},
+            inverseJoinColumns = {@JoinColumn(name = "course_Id", referencedColumnName = "courseId")}
     )
     private List<Courses> coursesList = new ArrayList<>();
 }
