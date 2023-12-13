@@ -3,6 +3,8 @@ package com.exemple1.exemple1.Models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "posts")
 public class Post {
@@ -12,9 +14,9 @@ public class Post {
     private String postName;
     private Double postSalary;
 
-    @OneToOne(mappedBy = "post")
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonBackReference
-    private Employee employee;
+    private List<Employee> employee;
 
         public  Post(){
 
@@ -50,11 +52,11 @@ public class Post {
         this.postSalary = postSalary;
     }
 
-    public Employee getEmployee() {
+    public List<Employee> getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(List<Employee> employee) {
         this.employee = employee;
     }
 }
